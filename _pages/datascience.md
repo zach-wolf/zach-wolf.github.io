@@ -2,7 +2,7 @@
 layout: archive
 permalink: /data-science/
 title: "Data Science Portfolio"
-author_profile: false  
+author_profile: true  
 
 ---
 
