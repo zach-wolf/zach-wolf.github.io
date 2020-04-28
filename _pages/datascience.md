@@ -1,19 +1,17 @@
 ---
 layout: archive
-permalink: "/data-science/"
-title: "Data Science Posts by Tags"
-author_profile: true  
+permalink: /data-science/
+title: "Data Science Portfolio"
+author_profile: false  
 header:
   image: "/images/tennessee.jpeg"
 ---
 
-{% include base_path %}
-{% include group-by-array collection=site.posts field="tags" %}
-
-{% for tag in group_names %}
-  {% assign posts = group_items[forloop.index0] %}
-  <h2 id="{{ tag | slugify }}" class="archive__subtitle">{{ tag }}</h2>
-  {% for post in posts %}
-    {% include archive-single.html %}
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <p>{{ post.excerpt }}</p>
+    </li>
   {% endfor %}
-{% endfor %}
+</ul>
