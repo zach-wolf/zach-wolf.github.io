@@ -3,8 +3,7 @@ layout: archive
 permalink: /data-science/
 title: "Data Science Portfolio"
 author_profile: false  
-header:
-  image: "/images/tennessee.jpeg"
+
 ---
 
 <ul>
