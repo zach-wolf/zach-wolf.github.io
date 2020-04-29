@@ -108,12 +108,15 @@ Below is how the distribution of 2020 predicted fantasy points compares to the d
 
 <img src="{{ site.url }}{{ site.baseurl}}/images/fantasyfootball/histograms.png" alt="">
 
-Here are the predicted power rankings across all positions for the 2020 fantasy football season.
+With exception to a couple of 2019 running back and wide receiver outliers, the distributions from 2019 to 2020 look similar.
+
+Click below for the predicted 2020 fantasy football power rankings across all positions.
 
 <a href="/pdfs/rankings.pdf"> 2020 Fantasy Football Projection Rankings </a>
 
 Using k-means clustering, I clustered the predicted results into “tiers.” I have always liked this approach of drafting because its more flexible. Every machine learning model has some error involved when predicting, so rather than strictly drafting down an ordered list, this is a good way of identifying groups of players that the model has predicted to perform similarly.
-Here are the predicted tiers for the 2020 fantasy football season.
+
+Click below for the predicted 2020 fantasy football tiers across all positions.
 
 <a href="/pdfs/tiers.pdf"> 2020 Fantasy Football Projection Tiers </a>
 
