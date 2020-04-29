@@ -7,6 +7,8 @@ toc_sticky: true
 toc_label: "Table of Contents"
 tags: [machine learning, data science, regression, R]
 excerpt: "Using machine learning algorithms to predict 2020 fantasy football point totals."
+header:
+  image: "/images/fantasyfootball/mccaffrey.jpeg"
 ---
 
 ## Introduction
