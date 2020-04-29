@@ -26,6 +26,8 @@ By the end of this, I will show you the basic building blocks to building a fant
 
 The idea at question here is: Can we use past NFL statistics to accurately predict how a player will perform in the upcoming NFL season (particularly as it relates to fantasy football)?
 
+### Organizing the Data
+
 The data that I used for this project came from Pro Football Focus (pff.com). They have different levels of data available based on levels of membership. I am an “Edge” member, so I used all of the data that is available at that membership tier. Their website makes it very easy to download csv data files.
 
 This project only includes FLEX players. A FLEX player is defined as a running back, wide receiver, or tight end.
@@ -74,6 +76,8 @@ The available features in the dataset that were considered in the analysis are:
 The dependent variable that was used to train the model is:
 
   * Next season fantasy points per game (*engineered from existing variables*)
+
+### Building the Model
 
 The objective is to predict a player’s fantasy points per game for the next season and then multiply that by 16 (NFL has a 16-game season) to produce a season points total projection.
 
@@ -127,4 +131,4 @@ Also, having more personal data for each player could improve performance. Such 
 
 ## Next Steps
 
-Other than continuing on the improvements mentioned above, the next step will be to build a similar model for quarterbacks. Once I can predict 2020 fantasy football points for quarterbacks, then I can include them in the ranking and tier worksheets and have complete 2020 fantasy football draft cheat sheets.
+Besides continuing on the improvements mentioned above, the next step will be to build a similar model for quarterbacks. Once I can predict 2020 fantasy football points for quarterbacks, then I can include them in the ranking and tier worksheets and have complete 2020 fantasy football draft cheat sheets.
