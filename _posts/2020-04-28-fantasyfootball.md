@@ -89,7 +89,7 @@ The data used to build the model was from 2010 – 2018. Data from the 2019 seas
 
 This data was then randomly split into a training and test set, with 75% of the data being in the training set and 25% being in the test set. The running backs training set included 184 player seasons, wide receivers included 301 player seasons, and tight ends included 189 player seasons.
 
-Next, I used Recursive Feature Elimination via the caret package on the training set to decide on which features to include in building the model.
+Next, I used Recursive Feature Elimination via the caret package on the training set to decide on which features to include in building the model. For running backs the top predictors were fantasy points per game, rushing yards, and carries. For wide receivers the top predictors were fantasy points per game, targets, and receiving yards. For tight ends the top predictors were fantasy points per game, fantasy points per snap, and receptions.
 
 Using the selected features, I built a random forest model, a linear regression model, a k-nearest neighbor model, and a neural network and compared performance across them all to select a final model.
 
