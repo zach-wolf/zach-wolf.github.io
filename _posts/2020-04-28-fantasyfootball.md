@@ -125,7 +125,7 @@ Click below for the predicted 2020 fantasy football tiers across all positions.
 
 ## Future Improvements
 
-There are a couple of obvious short comings to this model that can be improved upon.
+This is a very simple model and there are some obvious short comings that can be improved upon.
 
 The first is that it assumes that every player will play all 16 games next season. This becomes an issue with injury prone players and players that we know are not starting on the depth chart. In the future it could be worth looking into a separate model attempting to predict number of games that will be played next season and then combining the two outputs to calculate next season’s total points.
 
