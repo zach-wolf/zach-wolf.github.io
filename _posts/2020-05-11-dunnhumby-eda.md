@@ -26,6 +26,7 @@ Before digging too deep into machine learning algorithms and building any models
 
 Let's load our packages and dataset.
 
+
 ```r
 library(caret)
 library(dplyr)
@@ -37,9 +38,9 @@ library(Metrics)
 transaction_data <- read.csv("transaction_data.csv", header = T)
 ```
 
+
 The first thing I want to look at is the number of transactions per week to see if there were any patterns or abnormalities.
 
-(code and plot)
 
 ```r
 # plot transactions by week
@@ -50,7 +51,9 @@ ggplot(data=transaction_data, aes(x=WEEK_NO)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
+
 <img src="{{ site.url }}{{ site.baseurl}}/images/dunnhumby/transactions.png" alt="">
+
 
 Its apparent that the data for weeks 1 through roughly 16 is much different than the rest of the data. Perhaps the data begins on a date where the store first opened, or the amount of transactional data collected slowly increased over the first 4 months of the dataset. Since the first 4 months of data is not consistent with the remainder of the dataset, I will exclude it from all analyses.
 
@@ -58,12 +61,15 @@ Its apparent that the data for weeks 1 through roughly 16 is much different than
 
 At the end of the day, the performance of a business is all about how much money it makes. So, I want to explore **revenue**. (*I wanted to look at profit, but since the dataset doesn’t include cost, revenue will do just fine.*) First, I have to add a "REVENUE" column to the dataset. This is simply done by multiplying quantity by sales for each transaction row.
 
+
 ```r
 # calculate revenue
 transaction_data$REVENUE <- transaction_data$QUANTITY*transaction_data$SALES_VALUE
 ```
 
+
 Now that revenue is included in the dataset, I want to look at the revenue of each week and see if the data passes the eye test. (*Note that weeks 1-16 have been excluded.*)
+
 
 ```r
 weekly_revenue <- transaction_data %>%
@@ -83,11 +89,14 @@ ggplot(data=weekly_revenue, aes(x=WEEK_NO, y=REVENUE)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
+
 <img src="{{ site.url }}{{ site.baseurl}}/images/dunnhumby/revenue.png" alt="">
+
 
 In the plot above, nothing seems to look out of the ordinary. There looks like there is a positive increase in revenue over time. We see a large spike in revenue during Week 92 which will be worth paying attention to as we go forward. There is also a large drop off with Week 102, but since it is the last week in the dataset, it is probably safe to assume that it is not a complete week of data.
 
 Next, I want to look at the percent change in revenue from week to week.
+
 
 ```r
 # weekly revenue change
@@ -103,11 +112,14 @@ ggplot(data=weekly_revenue, aes(x=WEEK_NO, y=PCT_CHANGE)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
+
 <img src="{{ site.url }}{{ site.baseurl}}/images/dunnhumby/revenue-change.png" alt="">  
+
 
 Again, everything appears stable and consistent. We can see here that in Week 92 revenue increased by over 27% which matches up to its large spike in the previous plot. Also because of Week 92’s large revenue spike, Week 93 has the largest decline in revenue percent change of any week.
 
 Now I want to look at the number of customers per week.
+
 
 ```r
 # weekly customers plot
@@ -118,11 +130,14 @@ ggplot(data=weekly_revenue, aes(x=WEEK_NO, y=CUSTOMERS)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
+
 <img src="{{ site.url }}{{ site.baseurl}}/images/dunnhumby/customers.png" alt="">
+
 
 Similar to revenue, there looks to be a positive increase in the number of customers over time. Week 92 had the highest number of customers per week, lining up with its revenue spike. Week 93 had the lowest number of customers per week (not including Week 102), lining up with its large decline in revenue percent change. I hypothesize that Week 92 included some type of holiday that drove the huge spike in revenue and customers.
 
 Next, let’s look at the average revenue per basket for each week.
+
 
 ```r
 weekly_revenue <- weekly_revenue %>%
@@ -136,7 +151,9 @@ ggplot(data=weekly_revenue, aes(x=WEEK_NO, y=REVENUE_BASKET)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
+
 <img src="{{ site.url }}{{ site.baseurl}}/images/dunnhumby/revenue-basket.png" alt="">
+
 
 It is very clear here that the average revenue per basket increased over time.
 
@@ -145,6 +162,7 @@ After looking into revenue, we can see that 1) weekly revenue increased, 2) week
 ### New Customers
 
 Another valuable performance metric for a business is the **number of new customers that are acquired**. This particular dataset is described as “a group of 2,500 households who are frequent shoppers at a retailer,” so there may not be any valuable new customer insights here, but let’s take a look for ourselves.
+
 
 ```r
 # NEW CUSTOMERS
@@ -174,7 +192,9 @@ ggplot(data=new_ratio, aes(x=WEEK_NO, y=NEW_RATIO)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
+
 <img src="{{ site.url }}{{ site.baseurl}}/images/dunnhumby/new-customers.png" alt="">
+
 
 Here we see that after about 4 months (the data that we had previously excluded) there are very few new customers. Since this is a dataset of only frequent shoppers, there isn’t much to be done with new customer acquisition.
 
@@ -183,6 +203,7 @@ Here we see that after about 4 months (the data that we had previously excluded)
 The final metric that I want to explore is **retention**. It is important for a business to know how many of its customers continue to come back and use their product or services. If retention numbers are low, then the business knows it needs to do something differently to get customers to return.
 
 To do this, I looked at the percent of customers each week that had also shopped at the retailer the previous week.
+
 
 ```r
 # RETENTION
@@ -214,7 +235,9 @@ ggplot(data=retention_table, aes(x=WEEK_NO, y=RetentionRate)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
+
 <img src="{{ site.url }}{{ site.baseurl}}/images/dunnhumby/retention.png" alt="">
+
 
 Here we can see that after the initial 4-month window, the retention rate was consistently around 70% for the remainder of the dataset. Since we know that this is a dataset comprised of frequent shoppers, it makes sense that we would see a good and steady retention rate.
 
