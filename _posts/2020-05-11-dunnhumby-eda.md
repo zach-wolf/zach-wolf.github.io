@@ -8,7 +8,7 @@ toc_label: "Table of Contents"
 tags: [exploratory data analysis, data science, customer analytics, R]
 excerpt: "A deep dive into the dunnhumby Consumer Data dataset."
 header:
-  image: "/images/dunnhumby/databanner"
+  image: "/images/dunnhumby/databanner.png"
 ---
 
 ## Introduction
