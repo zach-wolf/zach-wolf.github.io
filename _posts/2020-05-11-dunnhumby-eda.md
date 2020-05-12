@@ -15,7 +15,7 @@ header:
 
 The following analysis uses a publicly available dataset of household level transactional data from dunnhumby. [dunnhumby](https://www.dunnhumby.com/about-us) is a customer data science company who works to “empower businesses everywhere to compete and thrive in the modern data-driven economy.” They are best known for their work with the Tesco Clubcard in the UK, and now Kroger’s loyalty card program in the US.
 
-There are many opportunities that are presented with this transactional data. We can look to identify **customer segments, a customer’s lifetime value, customers at risk of taking their business elsewhere, future sales numbers, and more**.
+There are many opportunities that are presented with customer transactional data. We can look to identify **customer segments, a customer’s lifetime value, customers at risk of taking their business elsewhere, future sales numbers, and more**.
 
 Identifying such patterns can be extremely beneficial to a business. Not only can this help a business plan into the future, but it provides valuable customer information that allows the company to target customers based entirely on their individual profiles.
 
@@ -55,11 +55,11 @@ ggplot(data=transaction_data, aes(x=WEEK_NO)) +
 <img src="{{ site.url }}{{ site.baseurl}}/images/dunnhumby/transactions.png" alt="">
 
 
-Its apparent that the data for weeks 1 through roughly 16 is much different than the rest of the data. Perhaps the data begins on a date where the store first opened, or the amount of transactional data collected slowly increased over the first 4 months of the dataset. Since the first 4 months of data is not consistent with the remainder of the dataset, I will exclude it from all analyses.
+Its apparent that the data for weeks 1 through roughly 16 is much different than the rest of the data. Perhaps the data begins on a date where the store first opened, or the amount of transactional data collected slowly increased over the first 4 months of the dataset. Since the first 4 months of data is not consistent with the remainder of the dataset, I will exclude it from analyses going forward.
 
 ### Revenue
 
-At the end of the day, the performance of a business is all about how much money it makes. So, I want to explore **revenue**. (*I wanted to look at profit, but since the dataset doesn’t include cost, revenue will do just fine.*) First, I have to add a "REVENUE" column to the dataset. This is simply done by multiplying quantity by sales for each transaction row.
+At the end of the day, the performance of a business is all about how much money it makes. So, I want to explore **revenue**. (*I wanted to look at profit, but since the dataset doesn’t include cost, revenue will do just fine.*) First, I have to add a "REVENUE" column to the dataset which can be done by multiplying QUANTITY by SALES_VALUE for each transaction row.
 
 
 ```r
@@ -68,7 +68,7 @@ transaction_data$REVENUE <- transaction_data$QUANTITY*transaction_data$SALES_VAL
 ```
 
 
-Now that revenue is included in the dataset, I want to look at the revenue of each week and see if the data passes the eye test. (*Note that weeks 1-16 have been excluded.*)
+Now that revenue is included in the dataset, I want to look at the revenue of each week and see if everything passes the eye test. (*Note that weeks 1-16 have been excluded.*)
 
 
 ```r
@@ -202,7 +202,7 @@ Here we see that after about 4 months (the data that we had previously excluded)
 
 The final metric that I want to explore is **retention**. It is important for a business to know how many of its customers continue to come back and use their product or services. If retention numbers are low, then the business knows it needs to do something differently to get customers to return.
 
-To do this, I looked at the percent of customers each week that had also shopped at the retailer the previous week.
+To do this, we need to look at the percent of customers each week that had also shopped at the retailer the previous week.
 
 
 ```r
@@ -239,12 +239,12 @@ ggplot(data=retention_table, aes(x=WEEK_NO, y=RetentionRate)) +
 <img src="{{ site.url }}{{ site.baseurl}}/images/dunnhumby/retention.png" alt="">
 
 
-Here we can see that after the initial 4-month window, the retention rate was consistently around 70% for the remainder of the dataset. Since we know that this is a dataset comprised of frequent shoppers, it makes sense that we would see a good and steady retention rate.
+Here we can see that after the initial 4-month window, the retention rate was consistently around 70% for the remainder of the dataset. Since we know that this is a dataset comprised of frequent shoppers, it makes sense that we would see a good and steady retention rate amongst them.
 
 
 ## Takeaways
 
-Because this is a dataset of frequent shoppers, I found that there weren’t any useful insights when it came to new customer acquisition. I found that there was a steady retention rate around 70%, but this is also most likely due to the fact that the data only reflects frequent shoppers.
+Because this is a dataset of frequent shoppers, I found that there weren’t any useful insights when it came to new customer acquisition. I found that there was a steady retention rate around 70%, but this is also most likely driven by the fact that the data only reflects frequent shoppers.
 
 Over the timeframe of the dataset, I found that weekly revenue increased, the average revenue per basket increased, and the number of weekly customers increased.
 
