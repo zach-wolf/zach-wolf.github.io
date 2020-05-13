@@ -6,7 +6,7 @@ toc_min_header: 2
 toc_sticky: true
 toc_label: "Table of Contents"
 tags: [exploratory data analysis, data science, customer analytics, R]
-excerpt: "A deep dive into the dunnhumby Consumer Data dataset."
+excerpt: "A deep dive into dunnhumby consumer data."
 header:
   image: "/images/dunnhumby/databanner.png"
 ---
@@ -256,4 +256,4 @@ Over the timeframe of the dataset, I found that weekly revenue increased, the av
 
 ## What's Next?
 
-The next step will be **customer segmentation**. We will use the dataset to group our frequent customers into similar customer segments.
+The next step will be [Customer Segmentation](https://zach-wolf.github.io/dunnhumby-segmentation/). We will use the dataset to group our frequent customers into similar customer segments.
