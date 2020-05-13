@@ -207,9 +207,9 @@ customer_profiles$OverallScore <- customer_profiles$RecencyCluster + customer_pr
 
 Each customer now has an Overall Score between 3 and 12. This will be used to define a customer as “High-Loyalty”, “Mid-Loyalty”, or “Low-Loyalty” as shown below.
 
-•	High-Loyalty: 9-12
-•	Mid-Loyalty: 6-8
-•	Low-Loyalty: 3-5
+  *	High-Loyalty: 9-12
+  *	Mid-Loyalty: 6-8
+  *	Low-Loyalty: 3-5
 
 With these customer loyalty segments, we can look at a few different plots to see the relationship between the groups.
 
@@ -231,9 +231,9 @@ This plot shows that our customer loyalty segments are describing customers as i
 Just by looking at a few plots, we can already draw some solid conclusions on how to capitalize with each segment.
 
 **Here are my takeaways for each customer loyalty segment:**
-1.	High-Loyalty: these are our most loyal customers and bring in the most money, so it should be a priority to retain these customers.
-2.	Mid-Loyalty: the recency and frequency are there, but it should be a priority to encourage these customers to spend more money per basket. Possibly sending them promotions on products in departments which they don’t normally shop.
-3.	Low-Loyalty: the priority here is to improve both recency and frequency.
+1.	*High-Loyalty*: these are our most loyal customers and bring in the most money, so it should be a priority to retain these customers.
+2.	*Mid-Loyalty*: the recency and frequency are there, but it should be a priority to encourage these customers to spend more money per basket. Possibly sending them promotions on products in departments which they don’t normally shop.
+3.	*Low-Loyalty*: the priority here is to improve both recency and frequency.
 
 ## What’s Next?
 
