@@ -6,7 +6,7 @@ toc_min_header: 2
 toc_sticky: true
 toc_label: "Table of Contents"
 tags: [k-means clustering, machine learning, data science, customer analytics, R]
-excerpt: "Creating customer loyalty segments using dunnhumby consumer data."
+excerpt: "Creating customer loyalty segments using k-means clustering."
 header:
   image: "/images/dunnhumby/databanner.png"
 ---
