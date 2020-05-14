@@ -276,6 +276,7 @@ Model performance for predicting CLV in dollars:
 | Multiple Linear Regression     | $1514.14      | 0.68     |
 | Neural Network     | $1520.01      | 0.68     |
 
+
 I selected the multiple linear regression model because it just slightly outperformed the neural network.
 
 Here is how the model did with predicting on the test set.
@@ -301,6 +302,7 @@ Model performance for predicting CLV segments:
 | Random Forest | 0.80  |
 | K-Nearest Neighbors   | 0.79  |
 | Neural Network  | 0.81  |
+
 
 The xgBoost model and neural network had the same accuracy on the training set. However, I selected the neural network model because it performed better on the test set.
 
