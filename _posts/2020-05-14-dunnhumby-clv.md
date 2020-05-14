@@ -266,7 +266,7 @@ model_clv_clust <- train(train_clv_clust[, -which(names(train_clv_clust) %in% c(
 
 ## Results
 
-#### CLV in $$$
+### CLV in $$$
 
 Model performance for predicting CLV in dollars:
 
@@ -291,7 +291,7 @@ rmse(test_clv$Revenue52wk, predictions_clv)
 
 The model had an RMSE of $1482.27 and an R-squared of 0.66 on the test set dataset.
 
-#### CLV Segments
+### CLV Segments
 
 Model performance for predicting CLV segments:
 
