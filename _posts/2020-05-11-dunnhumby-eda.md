@@ -26,6 +26,8 @@ Before digging too deep into machine learning algorithms and building any models
 
 Let's load our packages and dataset.
 
+You can download the datasets [here](https://www.kaggle.com/frtgnn/dunnhumby-the-complete-journey#causal_data.csv).
+
 
 ```r
 library(caret)
